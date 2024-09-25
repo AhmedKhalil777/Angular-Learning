@@ -1,1 +1,32 @@
-<p>layout works!</p>
+<mat-toolbar color="primary">
+    <button
+      type="button"
+      mat-icon-button
+      (click)="sidenav.toggle()"
+      aria-label="Toggle sidenav"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Market IO</span>
+  </mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav opened mode="side" class="sidenav">
+      <h2>Sidebar</h2>
+      <app-catalog-list> </app-catalog-list>
+      
+      <!-- <mat-nav-list>
+        <a mat-list-item href="#">Home</a>
+        <a mat-list-item href="#">About</a>
+        <a mat-list-item href="#">Contact</a>
+      </mat-nav-list> -->
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+
+      <div class="content">
+        <ng-content></ng-content>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

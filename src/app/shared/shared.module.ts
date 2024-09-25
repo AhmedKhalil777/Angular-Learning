@@ -8,11 +8,13 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { CatalogListComponent } from './components/catalog-list/catalog-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
 @NgModule({
-  declarations: [LayoutComponent],
+  declarations: [LayoutComponent, CatalogListComponent],
   imports: [
     CommonModule,
     FlexLayoutModule,
@@ -21,7 +23,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatSidenavModule,
     MatListModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   exports: [
     FlexLayoutModule,
@@ -29,7 +32,9 @@ import { MatIconModule } from '@angular/material/icon';
     MatSidenavModule,
     MatListModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    LayoutComponent,
+    HttpClientModule
   ]
 })
 export class SharedModule { }
