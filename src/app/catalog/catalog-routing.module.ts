@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CatalogEntryComponent } from './components/catalog-entry/catalog-entry.component';
 
 const routes: Routes = [{
-  path : '',
+  path : ':id',
   component: CatalogEntryComponent
 }];
 

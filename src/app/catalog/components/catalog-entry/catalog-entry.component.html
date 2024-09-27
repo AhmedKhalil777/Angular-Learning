@@ -1,1 +1,20 @@
-<p>catalog-entry works!</p>
+
+<mat-card  class="product-card">
+  <mat-card-header>
+    <mat-card-title>{{ catalog?.Name +  (catId |async) }}</mat-card-title>
+    <mat-card-subtitle>{{ catalog?.Description  }}</mat-card-subtitle>
+  </mat-card-header>
+
+
+  <ng-image-slider [images]="images" #nav></ng-image-slider>
+
+  <mat-card-content>
+    <p>{{ catalog?.Description  }}</p>
+    <p><strong>Price:</strong> ${{ catalog?.Price  }}</p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-button color="primary">Buy Now</button>
+    <button mat-button color="accent">Add to Cart</button>
+  </mat-card-actions>
+</mat-card>

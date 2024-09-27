@@ -10,9 +10,16 @@ import { map } from 'rxjs/operators';
 })
 export class CatalogService {
 
-  constructor(private client : HttpClient) { }
+  constructor(private readonly client : HttpClient) { }
+
 
   getCatalogs() : Observable<Catalog[]> {
-    return this.client.get<OData<Catalog>>('http://localhost:5180/odata/catalogs').pipe( map(res=> res.value));
+    return this.client.get<OData<Catalog>>('http://localhost:5180/odata/catalogs')
+    .pipe( map(res=> res.value));
+  }
+
+
+  getCatalog(catalogId : number): Observable<Catalog> {
+    return this.client.get<Catalog>(`http://localhost:5180/odata/catalogs/${catalogId}?$expand=Images`);
   }
 }
